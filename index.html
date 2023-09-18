@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presença</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .list-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Presença</h1>
+    <div class="list-container">
+        <ul id="lista-nomes">
+            <!-- Nomes serão inseridos aqui -->
+        </ul>
+        <input type="text" id="novo-nome" placeholder="Digite seu nome">
+        <button onclick="adicionarNome()">Adicionar Nome</button>
+    </div>
+
+    <script>
+        function adicionarNome() {
+            const nome = document.getElementById("novo-nome").value;
+            if (nome) {
+                const listaNomes = document.getElementById("lista-nomes");
+                const listItem = document.createElement("li");
+                listItem.textContent = nome;
+                listaNomes.appendChild(listItem);
+                document.getElementById("novo-nome").value = ""; // Limpa o campo de entrada
+            }
+        }
+    </script>
+</body>
+</html>
